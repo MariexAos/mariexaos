@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>LEETCODE | 又摘桃花换酒钱</title>
+    <title>#01_Search_Insert_Position | 又摘桃花换酒钱</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -15,7 +15,7 @@
 
 
     
-<link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+<link rel="stylesheet" href="/js/google-code-prettify/tomorrow.css">
 
 
   <meta name="generator" content="Hexo 4.2.1"></head>
@@ -48,16 +48,43 @@
 	
   
     <h1 class="post-title" itemprop="name">
-      LEETCODE
+      #01_Search_Insert_Position
     </h1>
   
 
 	<div class='post-body mb'>
-		<h5 id="LEETCODE"><a href="#LEETCODE" class="headerlink" title="LEETCODE"></a>LEETCODE</h5><h5 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h5><h5 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h5>
+		<h5 id="Search-Insert-Position"><a href="#Search-Insert-Position" class="headerlink" title="Search Insert Position"></a><a href="https://leetcode-cn.com/problems/search-insert-position/" target="_blank" rel="noopener">Search Insert Position</a></h5><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You may assume no duplicates in the array.</p>
+<p>Example 1:</p>
+<pre><code>Input: [1,3,5,6], 5
+Output: 2</code></pre><p>Example 2:</p>
+<pre><code>Input: [1,3,5,6], 2
+Output: 1</code></pre><p>Example 3:</p>
+<pre><code>Input: [1,3,5,6], 7
+Output: 4</code></pre><p>Example 4:</p>
+<pre><code>Input: [1,3,5,6], 0
+Output: 0</code></pre><h5 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h5><pre><code class="java">class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int high = nums.length - 1;
+        int low = 0;
+        while(low&lt;=high){
+            int mid = (low+high)/2;
+            if(target &gt; nums[mid]){
+                low = mid +1;
+            }else if(target &lt; nums[mid]){
+                high = mid -1;
+            }else{
+                return mid;
+            }
+        }
+        return low; 
+    }
+}</code></pre>
+
 	</div>
 	<div class="meta split">
 		
-		<time class="post-date" datetime="2020-07-17T09:45:21.000Z" itemprop="datePublished">2020-07-17</time>
+		<time class="post-date" datetime="2020-07-17T10:44:35.000Z" itemprop="datePublished">2020-07-17</time>
 	</div>
 </article>
 
